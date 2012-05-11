@@ -92,6 +92,22 @@ class ModuleNews4wardAuthorMenu extends News4ward
 				'href' => $this->generateFrontendUrl($objJumpTo->row(),'/author/'.$objItems->id),
 				'active' => ($this->Input->get('author') == $objItems->id)
 			);
+
+			// set active item for the active filter hinting
+			if($this->Input->get('author') == $objItems->id)
+			{
+				if(!isset($GLOBALS['news4ward_filter_hint']))
+				{
+					$GLOBALS['news4ward_filter_hint'] = array();
+				}
+
+				$GLOBALS['news4ward_filter_hint']['author'] = array
+				(
+					'hint'  	=> $this->news4ward_filterHint,
+					'value'		=> $objItems->name
+				);
+
+			}
 		}
 
 		$this->Template->items = $arr;
