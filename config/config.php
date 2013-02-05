@@ -1,4 +1,4 @@
-<?php if (!defined('TL_ROOT')) die('You cannot access this file directly!');
+<?php
 
 /**
  * News4ward
@@ -12,8 +12,13 @@
  */
 
 
+/**
+ * @copyright 4ward.media 2011 <http://www.4wardmedia.de>
+ * @author Christoph Wiechert <wio@psitrax.de>
+ */
+ 
 // FE-Modules
-$GLOBALS['FE_MOD']['news4ward']['news4wardAuthorMenu'] = 'ModuleNews4wardAuthorMenu';
+$GLOBALS['FE_MOD']['news4ward']['news4wardAuthorMenu'] = '\News4ward\Module\AuthorMenu';
 
 // News4wardList Filter HOOK
-$GLOBALS['TL_HOOKS']['News4wardListFilter'][] = array('News4wardAuthorMenuHelper','authorFilter');
+$GLOBALS['TL_HOOKS']['News4wardListFilter'][] = array('\News4ward\AuthorMenuHelper','authorFilter');

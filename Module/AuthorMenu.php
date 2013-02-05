@@ -1,4 +1,4 @@
-<?php if (!defined('TL_ROOT')) die('You cannot access this file directly!');
+<?php
 
 /**
  * News4ward
@@ -10,8 +10,10 @@
  * @filesource
  * @licence LGPL
  */
+ 
+namespace Psi\News4ward\Module;
 
-class ModuleNews4wardAuthorMenu extends News4ward
+class AuthorMenu extends \News4ward\Module\Module
 {
     /**
    	 * Template
